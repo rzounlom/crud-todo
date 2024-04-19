@@ -1,13 +1,12 @@
 import "./TodoList.css";
 
 import Todo from "../todo/Todo";
-import { initialTodos } from "../../data";
 
-const TodoList = () => {
+const TodoList = ({ todos }) => {
   return (
     <div>
-      {initialTodos.map((todo) => (
-        <Todo {...todo} />
+      {todos.map((todo) => (
+        <Todo key={todo.id} {...todo} />
       ))}
     </div>
   );
